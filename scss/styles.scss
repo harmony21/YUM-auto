@@ -1,0 +1,632 @@
+//resolutions
+$laptop: 1366px;
+$min-laptop: 1200px;
+$tablets: 1024px;
+$min-tablets: 768px;
+$phones: 480px;
+//config
+@mixin laptop {
+    @media screen and (max-width: $laptop) {
+        @content;
+    }
+}
+@mixin min-laptop {
+    @media screen and (max-width: $min-laptop) {
+        @content;
+    }
+}
+@mixin tablets {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+@mixin min-tablets {
+    @media screen and (max-width: $min-tablets) {
+        @content;
+    }
+}
+@mixin phones {
+    @media screen and (max-width: $phones) {
+        @content;
+    }
+}
+body {
+    font-size: 16px;
+    @include phones {
+        font-size: 13px;
+    }
+}
+//Главная
+.address {
+    p {
+        color: #fff;
+        font-size: 14px;
+        @include laptop {
+            font-size: 12px;
+        }
+    }
+    a {
+        color: rgba(255,255,255,0.5);
+        font-size: 14px;
+        @include laptop {
+            font-size: 12px;
+        }
+    }
+    &__hidden {
+        h3 {
+            font-size: 24px;
+            @include laptop {
+                font-size: 18px;
+            }
+        }
+        a {
+            font-size: 12px;
+            color: #000;
+            &:hover {
+                color: #E23626;
+            }
+        }
+    }
+}
+.phone {
+    font-size: 30px;
+    @include laptop {
+        font-size: 20px;
+    }
+    a {
+        color: #fff;
+    }
+    p {
+        font-size: 10px;
+        color: rgba(255,255,255,0.5);
+    }
+}
+.btn {
+    color: #fff;
+    font-size: 14px;
+    background-color: #E23626;
+    &:hover {
+        background-color: #BD3121;
+    }
+    &--inverse {
+        background-color: #fff;
+        color: #000;
+        &:hover {
+            background-color: #E23626;
+            color: #fff;
+        }
+    }
+    &.transparent {
+        background-color: transparent;
+        color: #000;
+        border: 1px solid #000;
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        } 
+    }
+}
+nav {
+    a {
+        font-size: 14px;
+        color: #fff;
+        @include laptop {
+            font-size: 12px;
+        }
+    }
+}
+.calculator-link {
+    span {
+        color: #fff;
+        font-size: 16px;
+        @include laptop {
+            font-size: 14px;
+        }
+    }
+    &--inverse {
+        span {
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+.slider {
+    h2 {
+        color: #fff;
+        font-size: 64px;
+        @include laptop {
+            font-size: 44px;
+        }
+        @include tablets {
+            font-size: 30px;
+        }
+        @include phones {
+            font-size: 26px;
+        }
+    }
+    p {
+        font-size: 18px;
+        color: #fff;
+        @include laptop {
+            font-size: 14px;
+        }
+    }
+}
+.link-more {
+    span {
+        color: #fff;
+        font-size: 13px;
+    }
+}
+.intro {
+    background-color: #BD3121;
+    p {
+        font-size: 14px;
+        color: #fff;
+        @include phones {
+            font-size: 12px;
+        }
+    }
+}
+.section-title {
+    color: #fff;
+    font-size: 36px;
+    &--inverse {
+        color: #000;
+    }
+    @include laptop {
+        font-size: 28px;
+    }
+    @include phones {
+        font-size: 24px;
+    }
+}
+//Каталог
+.catalog {
+    &__item {
+        p {
+            font-size: 9px;
+        }
+        &.sold {
+            background: rgba(229, 229, 229, 0.5);
+            .catalog__price {
+                p {
+                    font-size: 18px;
+                    @include phones {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    &__status {
+        color: #fff;
+        font-size: 14px;
+        &.sale {
+            background-color: #4FBD18;
+        }
+        &.new {
+            background-color: #E23626;
+        }
+        &.popular {
+            background-color: #00B1EB;
+        }
+    }
+    &__desc {
+        h4 {
+            font-size: 14px;
+        }
+        p {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 12px;
+        }
+    }
+    &__price {
+        p {
+            font-size: 24px;
+            @include phones {
+                font-size: 18px;
+            }
+            span {
+                &:first-child {
+                    color: #E23626;
+                    font-family: AvenirNextCyr-Bold;
+                }
+                &:last-child {
+                    color: rgba(0,0,0,0.5);
+                    font-size: 14px;
+                }
+            }
+        }
+        .btn {
+            background-color: #000;
+            &:hover {
+                background-color: #BD3121;
+                color: #fff;
+            }
+        }
+    }
+}
+//Калькулятор
+.calculator {
+    .fields-wrap {
+        &__item {
+            label {
+                font-size: 18px;
+                @include tablets {
+                    font-size: 14px;
+                }
+            }
+            input {
+                font-size: 18px;
+            }
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+    .results {
+        p {
+            span {
+                &:first-child {
+                    font-size: 18px;
+                    @include tablets {
+                        font-size: 14px;
+                    }
+                }
+                &:last-child {
+                    font-size: 20px;
+                    color: #E23626;
+                    @include tablets {
+                        font-size: 14px;
+                    }
+                    @include phones {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}   
+//Требования
+.requirements {
+    h5 {
+        color: #fff;
+        font-size: 18px;
+        @include laptop {
+            font-size: 16px;
+        }
+    }
+    p {
+        font-size: 14px;
+        color: #fff;
+        @include laptop {
+            font-size: 12px;
+        }
+    }
+    //Преимущества
+    &--advantages {
+        h5, p {
+            color: #000;
+        }
+    }
+}
+//Отзывы
+.reviews {
+    &__info {
+        &~p {
+            font-size: 14px;
+            @include phones {
+                font-size: 11px;
+            }
+        }
+    }
+    &__name {
+        p {
+            font-size: 24px;
+            @include laptop {
+                font-size: 18px;
+            }
+            @include phones {
+                font-size: 14px;
+            }
+        }
+    }
+    &__address {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        @include phones {
+            font-size: 12px;
+        }
+    }
+    &__link {
+        color: #fff;
+        div {
+            span {
+                font-size: 12px; 
+                @include phones {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+//Контакты
+.contacts {
+    &__top {
+        .phone {
+            a {
+                color: #E23626;
+            }  
+            p {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+    &__item {
+        p {
+            font-size: 14px;
+            @include phones {
+                font-size: 11px;
+            }
+            span {
+                color: rgba(0,0,0,0.5);
+            }
+        }
+        a {
+            color: #000;
+            font-size: 14px;
+            @include phones {
+                font-size: 11px;
+            }
+        }
+    }
+    &__wrap {
+        div {
+            p {
+                &:last-child {
+                    color: #E23626;
+                }
+                a {
+                    color: #E23626;
+                }
+            }
+        }
+    }
+}
+//Футер
+.footer {
+    nav {
+        a {
+            color: #000;
+            &:after {
+                background-color: #000;
+            }
+            @include tablets {
+                font-size: 11px;
+            }
+        }
+    }
+    .btn {
+        background-color: #000;
+        &:hover {
+            background-color: #BD3121;
+            color: #fff;
+        } 
+    }
+    &__bottom {
+        p {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 12px;
+        }
+        a {
+            color: rgba(0, 0, 0, 0.5);
+            &:hover {
+                color: rgba(0,0,0,1);
+            }
+        }
+    }
+}
+//Модальные окна
+.modal-window {
+    h2 {
+        font-size: 28px;
+        color: #E23626;
+        @include phones {
+            font-size: 18px;
+        }
+    }
+}
+//Мобильное меню
+.mobile-menu {
+    ul {
+        li {
+            a {
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+    }
+    .address {
+        &__hidden {
+            ul {
+                li {
+                    a {
+                        color: #000;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Заказать звонок
+.order-call {
+    input {
+        font-size: 14px;
+    }
+    p {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 13px;
+        @include phones {
+            font-size: 11px;
+        }
+    }
+    a {
+        color: #000;
+    }
+}
+//Сделать расчет 
+.modal-calculator {
+    &__order {
+        input {
+            font-size: 14px;
+        }
+        .btn {
+            background-color: #E23626;
+        }
+        p {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 12px !important;
+            a {
+                color: #000;
+            }
+        }
+    }
+    .calculator {
+        h2 {
+            font-size: 30px;
+            @include laptop {
+                font-size: 24px;
+            }
+            @include phones {
+                font-size: 16px;
+            }
+        }
+        p {
+            font-size: 14px;
+            @include phones {
+                font-size: 11px;
+            }
+        }
+        .fields-wrap {
+            p {
+                @include tablets {
+                    font-size: 11px;
+                }
+            }
+        }
+        .fields-wrap__item {
+            label {
+                font-size: 16px;
+                @include tablets {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+//Заказать авто 
+.order-car {
+    &__right {
+        h2 {
+            font-size: 24px;
+            @include min-tablets {
+                font-size: 18px;
+            }
+        }
+    }
+    &__parameters {
+        p {
+            font-size: 14px; 
+            @include min-tablets {
+                font-size: 12px;
+            }
+        }
+    }
+    &__desc {
+        font-size: 13px;
+        @include min-tablets {
+            font-size: 11px;
+        }
+    }
+    &__price {
+        #new-price {
+            font-size: 24px;
+            color: #E23626;
+            @include laptop {
+                font-size: 20px;
+            }
+            @include tablets {
+                font-size: 16px;
+            }
+            @include phones {
+                font-size: 20px;
+            }
+            span {
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 14px;
+            }
+        }
+        #old-price {
+            color: rgba(0, 0, 0, 0.2);
+            font-size: 12px;
+        }
+    }
+    &__bottom {
+        .btn {
+            @include phones {
+                background-color: #000;
+            }
+        }
+    }
+    .requirements {
+        background: #E7E7E7;
+        h5 {
+            font-size: 14px;
+        }
+        p {
+            font-size: 11px !important;
+        }
+    }
+}
+textarea {
+    font-size: 14px;
+}
+//Оставить отзыв
+.modal-review {
+    p {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 13px;
+        @include phones {
+            font-size: 11px;
+        }
+    }
+    a {
+        color: #000;
+    }
+}
+:-moz-placeholder {
+    color: #000;
+}
+:-ms-input-placeholder {
+    color: #000;
+}
+::-moz-placeholder {
+    color: #000;
+}
+::-webkit-input-placeholder {
+    color: #000;
+}
+:focus::-webkit-input-placeholder {
+    color: transparent
+}
+:focus::-moz-placeholder {
+    color: transparent
+}
+:focus:-moz-placeholder {
+    color: transparent
+}
+:focus:-ms-input-placeholder {
+    color: transparent
+}

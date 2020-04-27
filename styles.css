@@ -1,0 +1,446 @@
+body {
+  font-size: 16px; }
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 13px; } }
+
+.address p {
+  color: #fff;
+  font-size: 14px; }
+  @media screen and (max-width: 1366px) {
+    .address p {
+      font-size: 12px; } }
+
+.address a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px; }
+  @media screen and (max-width: 1366px) {
+    .address a {
+      font-size: 12px; } }
+
+.address__hidden h3 {
+  font-size: 24px; }
+  @media screen and (max-width: 1366px) {
+    .address__hidden h3 {
+      font-size: 18px; } }
+
+.address__hidden a {
+  font-size: 12px;
+  color: #000; }
+  .address__hidden a:hover {
+    color: #E23626; }
+
+.phone {
+  font-size: 30px; }
+  @media screen and (max-width: 1366px) {
+    .phone {
+      font-size: 20px; } }
+  .phone a {
+    color: #fff; }
+  .phone p {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5); }
+
+.btn {
+  color: #fff;
+  font-size: 14px;
+  background-color: #E23626; }
+  .btn:hover {
+    background-color: #BD3121; }
+  .btn--inverse {
+    background-color: #fff;
+    color: #000; }
+    .btn--inverse:hover {
+      background-color: #E23626;
+      color: #fff; }
+  .btn.transparent {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000; }
+    .btn.transparent:hover {
+      background-color: #000;
+      color: #fff; }
+
+nav a {
+  font-size: 14px;
+  color: #fff; }
+  @media screen and (max-width: 1366px) {
+    nav a {
+      font-size: 12px; } }
+
+.calculator-link span {
+  color: #fff;
+  font-size: 16px; }
+  @media screen and (max-width: 1366px) {
+    .calculator-link span {
+      font-size: 14px; } }
+
+.calculator-link--inverse span {
+  color: rgba(0, 0, 0, 0.5); }
+
+.slider h2 {
+  color: #fff;
+  font-size: 64px; }
+  @media screen and (max-width: 1366px) {
+    .slider h2 {
+      font-size: 44px; } }
+  @media screen and (max-width: 1024px) {
+    .slider h2 {
+      font-size: 30px; } }
+  @media screen and (max-width: 480px) {
+    .slider h2 {
+      font-size: 26px; } }
+
+.slider p {
+  font-size: 18px;
+  color: #fff; }
+  @media screen and (max-width: 1366px) {
+    .slider p {
+      font-size: 14px; } }
+
+.link-more span {
+  color: #fff;
+  font-size: 13px; }
+
+.intro {
+  background-color: #BD3121; }
+  .intro p {
+    font-size: 14px;
+    color: #fff; }
+    @media screen and (max-width: 480px) {
+      .intro p {
+        font-size: 12px; } }
+
+.section-title {
+  color: #fff;
+  font-size: 36px; }
+  .section-title--inverse {
+    color: #000; }
+  @media screen and (max-width: 1366px) {
+    .section-title {
+      font-size: 28px; } }
+  @media screen and (max-width: 480px) {
+    .section-title {
+      font-size: 24px; } }
+
+.catalog__item p {
+  font-size: 9px; }
+
+.catalog__item.sold {
+  background: rgba(229, 229, 229, 0.5); }
+  .catalog__item.sold .catalog__price p {
+    font-size: 18px; }
+    @media screen and (max-width: 480px) {
+      .catalog__item.sold .catalog__price p {
+        font-size: 16px; } }
+
+.catalog__status {
+  color: #fff;
+  font-size: 14px; }
+  .catalog__status.sale {
+    background-color: #4FBD18; }
+  .catalog__status.new {
+    background-color: #E23626; }
+  .catalog__status.popular {
+    background-color: #00B1EB; }
+
+.catalog__desc h4 {
+  font-size: 14px; }
+
+.catalog__desc p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px; }
+
+.catalog__price p {
+  font-size: 24px; }
+  @media screen and (max-width: 480px) {
+    .catalog__price p {
+      font-size: 18px; } }
+  .catalog__price p span:first-child {
+    color: #E23626;
+    font-family: AvenirNextCyr-Bold; }
+  .catalog__price p span:last-child {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px; }
+
+.catalog__price .btn {
+  background-color: #000; }
+  .catalog__price .btn:hover {
+    background-color: #BD3121;
+    color: #fff; }
+
+.calculator .fields-wrap__item label {
+  font-size: 18px; }
+  @media screen and (max-width: 1024px) {
+    .calculator .fields-wrap__item label {
+      font-size: 14px; } }
+
+.calculator .fields-wrap__item input {
+  font-size: 18px; }
+
+.calculator .fields-wrap__item span {
+  font-size: 12px; }
+
+.calculator .results p span:first-child {
+  font-size: 18px; }
+  @media screen and (max-width: 1024px) {
+    .calculator .results p span:first-child {
+      font-size: 14px; } }
+
+.calculator .results p span:last-child {
+  font-size: 20px;
+  color: #E23626; }
+  @media screen and (max-width: 1024px) {
+    .calculator .results p span:last-child {
+      font-size: 14px; } }
+  @media screen and (max-width: 480px) {
+    .calculator .results p span:last-child {
+      font-size: 18px; } }
+
+.requirements h5 {
+  color: #fff;
+  font-size: 18px; }
+  @media screen and (max-width: 1366px) {
+    .requirements h5 {
+      font-size: 16px; } }
+
+.requirements p {
+  font-size: 14px;
+  color: #fff; }
+  @media screen and (max-width: 1366px) {
+    .requirements p {
+      font-size: 12px; } }
+
+.requirements--advantages h5, .requirements--advantages p {
+  color: #000; }
+
+.reviews__info ~ p {
+  font-size: 14px; }
+  @media screen and (max-width: 480px) {
+    .reviews__info ~ p {
+      font-size: 11px; } }
+
+.reviews__name p {
+  font-size: 24px; }
+  @media screen and (max-width: 1366px) {
+    .reviews__name p {
+      font-size: 18px; } }
+  @media screen and (max-width: 480px) {
+    .reviews__name p {
+      font-size: 14px; } }
+
+.reviews__address {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px; }
+  @media screen and (max-width: 480px) {
+    .reviews__address {
+      font-size: 12px; } }
+
+.reviews__link {
+  color: #fff; }
+  .reviews__link div span {
+    font-size: 12px; }
+    @media screen and (max-width: 480px) {
+      .reviews__link div span {
+        font-size: 11px; } }
+
+.contacts__top .phone a {
+  color: #E23626; }
+
+.contacts__top .phone p {
+  color: rgba(0, 0, 0, 0.5); }
+
+.contacts__item p {
+  font-size: 14px; }
+  @media screen and (max-width: 480px) {
+    .contacts__item p {
+      font-size: 11px; } }
+  .contacts__item p span {
+    color: rgba(0, 0, 0, 0.5); }
+
+.contacts__item a {
+  color: #000;
+  font-size: 14px; }
+  @media screen and (max-width: 480px) {
+    .contacts__item a {
+      font-size: 11px; } }
+
+.contacts__wrap div p:last-child {
+  color: #E23626; }
+
+.contacts__wrap div p a {
+  color: #E23626; }
+
+.footer nav a {
+  color: #000; }
+  .footer nav a:after {
+    background-color: #000; }
+  @media screen and (max-width: 1024px) {
+    .footer nav a {
+      font-size: 11px; } }
+
+.footer .btn {
+  background-color: #000; }
+  .footer .btn:hover {
+    background-color: #BD3121;
+    color: #fff; }
+
+.footer__bottom p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px; }
+
+.footer__bottom a {
+  color: rgba(0, 0, 0, 0.5); }
+  .footer__bottom a:hover {
+    color: black; }
+
+.modal-window h2 {
+  font-size: 28px;
+  color: #E23626; }
+  @media screen and (max-width: 480px) {
+    .modal-window h2 {
+      font-size: 18px; } }
+
+.mobile-menu ul li a {
+  color: #fff;
+  font-size: 18px; }
+
+.mobile-menu .address__hidden ul li a {
+  color: #000;
+  font-size: 14px; }
+
+.order-call input {
+  font-size: 14px; }
+
+.order-call p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px; }
+  @media screen and (max-width: 480px) {
+    .order-call p {
+      font-size: 11px; } }
+
+.order-call a {
+  color: #000; }
+
+.modal-calculator__order input {
+  font-size: 14px; }
+
+.modal-calculator__order .btn {
+  background-color: #E23626; }
+
+.modal-calculator__order p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px !important; }
+  .modal-calculator__order p a {
+    color: #000; }
+
+.modal-calculator .calculator h2 {
+  font-size: 30px; }
+  @media screen and (max-width: 1366px) {
+    .modal-calculator .calculator h2 {
+      font-size: 24px; } }
+  @media screen and (max-width: 480px) {
+    .modal-calculator .calculator h2 {
+      font-size: 16px; } }
+
+.modal-calculator .calculator p {
+  font-size: 14px; }
+  @media screen and (max-width: 480px) {
+    .modal-calculator .calculator p {
+      font-size: 11px; } }
+
+@media screen and (max-width: 1024px) {
+  .modal-calculator .calculator .fields-wrap p {
+    font-size: 11px; } }
+
+.modal-calculator .calculator .fields-wrap__item label {
+  font-size: 16px; }
+  @media screen and (max-width: 1024px) {
+    .modal-calculator .calculator .fields-wrap__item label {
+      font-size: 11px; } }
+
+.order-car__right h2 {
+  font-size: 24px; }
+  @media screen and (max-width: 768px) {
+    .order-car__right h2 {
+      font-size: 18px; } }
+
+.order-car__parameters p {
+  font-size: 14px; }
+  @media screen and (max-width: 768px) {
+    .order-car__parameters p {
+      font-size: 12px; } }
+
+.order-car__desc {
+  font-size: 13px; }
+  @media screen and (max-width: 768px) {
+    .order-car__desc {
+      font-size: 11px; } }
+
+.order-car__price #new-price {
+  font-size: 24px;
+  color: #E23626; }
+  @media screen and (max-width: 1366px) {
+    .order-car__price #new-price {
+      font-size: 20px; } }
+  @media screen and (max-width: 1024px) {
+    .order-car__price #new-price {
+      font-size: 16px; } }
+  @media screen and (max-width: 480px) {
+    .order-car__price #new-price {
+      font-size: 20px; } }
+  .order-car__price #new-price span {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px; }
+
+.order-car__price #old-price {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 12px; }
+
+@media screen and (max-width: 480px) {
+  .order-car__bottom .btn {
+    background-color: #000; } }
+
+.order-car .requirements {
+  background: #E7E7E7; }
+  .order-car .requirements h5 {
+    font-size: 14px; }
+  .order-car .requirements p {
+    font-size: 11px !important; }
+
+textarea {
+  font-size: 14px; }
+
+.modal-review p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px; }
+  @media screen and (max-width: 480px) {
+    .modal-review p {
+      font-size: 11px; } }
+
+.modal-review a {
+  color: #000; }
+
+:-moz-placeholder {
+  color: #000; }
+
+:-ms-input-placeholder {
+  color: #000; }
+
+::-moz-placeholder {
+  color: #000; }
+
+::-webkit-input-placeholder {
+  color: #000; }
+
+:focus::-webkit-input-placeholder {
+  color: transparent; }
+
+:focus::-moz-placeholder {
+  color: transparent; }
+
+:focus:-moz-placeholder {
+  color: transparent; }
+
+:focus:-ms-input-placeholder {
+  color: transparent; }

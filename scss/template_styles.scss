@@ -1,0 +1,2074 @@
+//fonts
+@font-face {
+    font-family: AvenirNextCyr;
+    src: url('fonts/AvenirNextCyr-Medium.eot'),
+    url('fonts/AvenirNextCyr-Medium.woff');
+}
+@font-face {
+    font-family: AvenirNextCyr-Bold;
+    src: url('fonts/AvenirNextCyr-Bold.eot'),
+    url('fonts/AvenirNextCyr-Bold.woff');
+}
+@font-face {
+    font-family: AvenirNextCyr-Demi;
+    src: url('fonts/AvenirNextCyr-Demi.eot'),
+    url('fonts/AvenirNextCyr-Demi.woff');
+}
+//resolutions
+$laptop: 1366px;
+$min-laptop: 1200px;
+$tablets: 1024px;
+$min-tablets: 768px;
+$phones: 480px;
+//config
+@mixin laptop {
+    @media screen and (max-width: $laptop) {
+        @content;
+    }
+}
+@mixin min-laptop {
+    @media screen and (max-width: $min-laptop) {
+        @content;
+    }
+}
+@mixin tablets {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+@mixin min-tablets {
+    @media screen and (max-width: $min-tablets) {
+        @content;
+    }
+}
+@mixin phones {
+    @media screen and (max-width: $phones) {
+        @content;
+    }
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: AvenirNextCyr;
+    width: 100%;
+    overflow-x: hidden;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    outline: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+img {
+    border: none;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.container {
+    padding: 80px 242px;
+    width: 100%;
+    box-sizing: border-box;
+    @include laptop {
+        padding: 40px 20px;
+    }
+    @include phones {
+        padding: 40px 10px;
+    }
+}
+//Главная
+.section {
+    position: relative;
+    width: 100%;
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &.welcome {
+        height: 100vh;
+        overflow: hidden;
+    }
+    &.offers {
+        .section__top {
+            @include phones {
+                flex-direction: column;
+                .btn {
+                    margin-top: 15px;
+                    @include phones {
+                        width: 100%;
+                    }
+                }
+            }
+        } 
+    }
+    &.review {
+        .section__top {
+            @include tablets {
+                flex-direction: column;
+                align-items: flex-start;
+                .btn {
+                    margin-top: 15px;
+                    @include phones {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+.header {
+    padding: 35px 60px;
+    position: relative;
+    z-index: 11;
+    box-sizing: border-box;
+    width: 100%;
+    @include laptop {
+        padding: 25px 20px;
+    }
+    @include phones {
+        padding: 25px 10px;
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__bottom {
+        margin-top: 45px;
+        @include laptop {
+            margin-top: 0px;
+        }
+    }
+    .address, .socials, .btn, nav {
+        @include tablets {
+            display: none;
+        }
+    }
+    .phone {
+        @include tablets {
+            text-align: right;
+            padding: 0;
+        }
+    }
+    &.inside-page {
+        background-color: #5f5f5f;
+        padding-bottom: 0;
+        @include tablets {
+            padding-bottom: 20px;
+        }
+    }
+}
+.menu-icon {
+    display: none;
+    @include tablets {
+        display: block;
+    }
+}
+.logo {
+    flex-grow: 0.8;
+}
+.address {
+    display: flex;
+    align-items: center;
+    position: relative;
+    a {
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+        &:hover {
+            text-decoration: underline;
+        }
+        span {
+            margin-left: 8px;
+        }
+    }
+    &__hidden {
+        background-color: #E5E5E5;
+        position: absolute;
+        padding: 30px;
+        box-sizing: border-box;
+        top: 110%;
+        right: 0;
+        width: 320px;
+        display: none;
+        z-index: 100;
+        @include laptop {
+            width: 250px;
+        }
+        h3 {
+            margin: 0;
+        }
+        ul {
+            margin-top: 15px;
+            li {
+                margin-top: 5px;
+                a {
+                    margin-left: 0;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        img {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+.phone {
+    font-family: AvenirNextCyr-Demi;
+    border-left: 1px solid #E23626;
+    padding: 0 25px;
+    text-align: center;
+    @include laptop {
+        border-left: none;     
+        padding: 0 10px;
+    }
+    p {
+        margin: 0;
+    }
+    
+}
+.socials {
+    ul {
+        display: flex;
+        li {
+            margin-right: 35px;
+            @include laptop {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+.btn {
+    padding: 10px 20px;
+    transition: 0.2s ease-in-out;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-align: center; 
+}
+nav {
+    display: inline-block;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    @include laptop {
+        padding-bottom: 10px;
+    }
+    a {
+        font-family: AvenirNextCyr-Demi;
+        margin-right: 50px;
+        text-transform: uppercase;
+        position: relative;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            left: 0;
+            bottom: -2px;
+            transition: 0.4s ease-in-out;
+        }
+        &:hover {
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+.main-info {
+    margin-top: 100px;
+    position: relative;
+    @include laptop {
+        margin-top: 20px;
+    }
+    @include tablets {
+        margin-top: 150px;
+    }
+    .container {
+        padding-top: 0;
+    }
+    .calculator-link {
+        @include laptop {
+            width: 300px;
+        }
+        img {
+            animation: radial-pulse-1 1s infinite;
+            @keyframes radial-pulse-1 {
+                0% {
+                  box-shadow: 0 0 0 0px rgba(211, 211, 211, 0.5);
+                }
+               
+                100% {
+                    box-shadow: 0 0 0 20px rgba(211, 211, 211, 0);
+                }
+            }
+        }
+        span {
+            @include tablets {
+                display: none;
+            }
+        }
+    }
+}
+.calculator-link {
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    position: relative;
+    z-index: 11;
+    @include laptop {
+        margin: 0;
+    }
+    img {
+        animation: radial-pulse 1s infinite;
+        @keyframes radial-pulse {
+            0% {
+              box-shadow: 0 0 0 0px rgba(226, 54, 38, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 0 10px rgba(226, 54, 38, 0);
+            }
+        }
+    }
+    span {
+        margin-left: 18px;
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            left: 0;
+            bottom: -2px;
+            transition: 0.4s ease-in-out;
+        }
+    }
+    &:hover {
+        span {
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+    &--inverse {
+        span {
+            margin: 0 18px 0 0;
+            &:after {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+.slider {
+    position: absolute;
+    top: -305px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include tablets {
+        top: -290px;
+    }
+    &__pic {
+        filter: brightness(60%);
+        width: 100%;
+        height: 100%;
+        @include tablets {
+            margin-top: 0px;
+            margin-left: -80%;
+        }
+        @include phones {
+            margin-left: -200%;
+        }
+    }
+    h2, p, .btn {
+        position: absolute;
+        left: 242px;
+        margin-left: -100%;
+        @include laptop {
+            left: 70px;
+        }
+        @include tablets {
+            left: 20px;
+        }
+    }
+    h2 {
+        
+        font-family: AvenirNextCyr-Bold;
+        top: 380px;
+        text-transform: uppercase;
+        @include laptop {
+            top: 350px;
+        }
+        @include tablets {
+            top: 340px;
+        }
+    }
+    p {
+        top: 665px;
+        width: 350px;
+        line-height: 1.5;
+        @include laptop {
+            top: 540px;
+        }
+        @include tablets {
+            top: 450px;
+        }
+    }
+    .btn {
+        bottom: 530px;
+        display: block;
+        @include laptop {
+            bottom: 690px;
+        }
+        @include tablets {
+            bottom: 780px;
+        }
+    }
+    .lSPager.lSpg {
+        position: absolute;
+        bottom: -705px;
+        left: 242px;
+        @include laptop {
+            bottom: -612px;
+            left: 70px;
+        }
+        @include tablets {
+            bottom: -520px;
+            width: 100%;
+            left: 0;
+        }
+    }
+    .arrow-left, .arrow-right {
+        bottom: -400px;
+        @include tablets {
+            display: none;
+        }
+    }
+}
+.arrow-left, .arrow-right {
+    position: absolute;
+    z-index: 11;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.4);
+    }
+}
+.arrow-left {
+    left: 0px;
+    transform: rotate(180deg);
+}
+.arrow-right {
+    right: 0px;
+}
+.lSSlideOuter .lSPager.lSpg>li {
+    padding-right: 20px;
+}
+.lSSlideOuter .lSPager.lSpg>li a {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    @include laptop {
+        width: 9px;
+        height: 9px;
+    }
+}
+.lSSlideOuter .lSPager.lSpg>li.active a {
+    background-color: #E23626;
+    border: 2px solid #E23626;
+}
+.lSSlideOuter .lSPager.lSpg>li:hover a {
+    background-color: #E23626;
+    border: 2px solid #E23626;
+}
+.link-more {
+    position: absolute;
+    top: 566px;
+    left: 480px;
+    display: flex;
+    align-items: center;
+    z-index: 11;
+    animation: arrow 1s linear infinite;
+    @include laptop {
+        top: 377px;
+        left: 300px;
+    }
+    @include tablets {
+        display: none;
+    }
+    img {
+        transform: rotate(90deg);
+        margin-left: 20px;
+    }
+    @keyframes arrow {
+        0% {
+            margin-top: 0;
+        }
+        50% {
+            margin-top: 4px;
+        }
+        100% {
+            margin-top: 0;
+        }
+    }
+    span {
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            left: 0;
+            bottom: -2px;
+            transition: 0.4s ease-in-out;
+        }
+    }
+    &:hover {
+        span {
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+.intro {
+    position: relative;
+    hr {
+        width: 50%;
+        position: absolute;
+        margin: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -25%;
+        color: #fff;
+        @include phones {
+            width: 100%;
+            left: 0;
+            margin-left: 0;
+        }
+    }
+    &.team {
+        @include laptop {
+            margin-bottom: 50px;
+        }
+        @include phones {
+            margin-bottom: 0;
+        }
+    }
+}
+.section-title {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+//Каталог 
+.better-offers {
+    padding: 0 150px;
+    @include laptop {
+        padding: 0 90px;
+    }
+    @include min-tablets {
+        padding: 0 20px;
+    }
+    .section__top {
+        @include laptop {
+            padding: 30px 0;
+        }
+    }
+    .calculator-link {
+        @include min-tablets {
+            display: none;
+        }
+    }
+    .lSSlideOuter .lSPager.lSpg>li a {
+        border: 1px solid #000;
+    }
+}
+.catalog {
+    position: relative;
+    box-sizing: border-box;
+    &__item {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 12px 15px;
+        box-sizing: border-box;
+        position: relative;
+        transition: 0.3s ease-in-out;
+        overflow: hidden;
+        margin: 5px;
+        @include phones {
+            display: flex;
+            flex-direction: column;
+        }
+        &:hover {
+            cursor: default;
+            box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+        }
+        p {
+            text-align: center;
+        }
+    }
+    &__status {
+        text-transform: uppercase;
+        padding: 5px 0;
+        text-align: center;
+        width: 150px;
+        position: absolute;
+        top: 12px;
+        right: 0;
+        z-index: 5;
+    }
+    &__pic {
+        width: 100%;
+        overflow: hidden;
+        height: 175px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12px;
+        img {
+            width: 100%;
+            transition: 0.2s ease-in-out;
+        }
+    }
+    &__desc {
+        h4 {
+            font-size: 14px;
+        }
+        p {
+            text-align: left;
+        }
+    }
+    &__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .btn {
+            margin-right: -15px;
+        }
+    }
+    .arrow-left, .arrow-right {
+        top: 40%;
+        @include min-tablets {
+            display: none;
+        }
+    }
+    .arrow-left {
+        left: -150px;
+        @include laptop {
+            left: -80px;
+        }
+    }
+    .arrow-right {
+        right: -150px;
+        @include laptop {
+            right: -80px;
+        }
+    }
+    &.full {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        @include min-tablets {
+            flex-direction: column;
+        }
+        .catalog__item {
+            width: 49.5%;
+            margin: 15px 0 0 0;
+            display: flex;
+            align-items: center;
+            @include min-tablets {
+                width: 100%;
+            }
+        }
+        .catalog__pic {
+            width: 50%;
+            margin-right: 20px;
+            @include phones {
+                width: 100%;
+            }
+        }
+        .catalog__status {
+            top: 0px;
+        }
+        .catalpg__price {
+            p {
+                margin: 5px 0;
+            }
+        }
+    }
+    &~hr {
+        width: 80%;
+        margin-top: 80px;
+        @include laptop {
+            margin-top: 40px;
+        }
+    }
+    .lSSlideOuter .lSPager.lSpg {
+        margin-top: 20px !important;
+    }
+}
+//Калькулятор
+.calculator {
+    hr {
+        width: 80%;
+    }
+    h2 {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        &:before {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin-right: 18px;
+            background: url('images/calc-icon-transparent.png');
+            @include phones {
+                display: none;
+            }
+        }
+    }
+    .fields-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        @include min-tablets {
+            flex-direction: column;
+        }
+        &__item {
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: relative;
+            @include min-tablets {
+                width: 80%;
+                padding: 0;
+            }
+            @include phones {
+                width: 100%;
+            }
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            label {
+                text-transform: uppercase;
+                width: 70%;
+            }
+            input {
+                flex-grow: 1;
+                width: 20%;
+                text-align: right;
+                font-family: AvenirNextCyr;
+            }
+            span {
+                position: absolute;
+                bottom: -25px;
+                left: 20px;
+            }
+        }
+    }
+    .results {
+        display: flex;
+        width: 60%;
+        @include min-tablets {
+            width: 80%;
+            flex-direction: column;
+        }
+        @include phones {
+            width: 100%;
+        }
+        p {
+            width: 100%;
+            border-right: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:  20px;
+            box-sizing: border-box;
+            @include tablets {
+                padding: 10px;
+            }
+            @include min-tablets {
+                flex-direction: row;
+                border-right: none;
+                border-bottom: 1px solid #000;
+                justify-content: flex-start;
+                margin: 5px 0;
+            }
+            @include phones {
+                justify-content: space-between;
+                padding: 0 0 5px 0;
+            }
+            &:last-child {
+                border-right: none;
+            }
+            span {
+                &:last-child {
+                    font-weight: bold;
+                    margin-top: 10px;
+                    @include min-tablets {
+                        margin-top: 0;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .order {
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        @include tablets {
+            width: 40%;
+        }
+        @include min-tablets {
+            width: 80%;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+        @include phones {
+            width: 100%;
+        }
+        a {
+            &:last-child {
+                margin-left: 10px;
+            }
+        }
+    }
+    .ui-slider-horizontal {
+        height: 5px;
+        background: #C4C4C4;
+        
+    }
+    .ui-widget.ui-widget-content {
+        border: none;
+    }
+    .ui-state-default, .ui-widget-content .ui-state-default {
+        border: none;
+        background-color: #E23626;
+        width: 11px;
+        height: 17px;
+    }
+}
+//Требования
+.requirements {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 60px;
+    @include tablets {
+        flex-wrap: wrap;
+    }
+    @include phones {
+        margin-top: 30px;
+    }
+    &__item {
+        width: calc(98%/4);
+        display: flex;
+        align-items: flex-start;
+        @include tablets {
+            width: 50%;
+            margin-top: 15px;
+        }
+        @include min-tablets {
+            width: 100%;
+        }
+    }
+    &__desc {
+        @include phones {
+            width: 80%;
+        }
+    }
+    &__icon {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 25px;
+        border-right: 2px solid white;
+        @include laptop {
+            padding-right: 15px;
+        }
+    }
+    h5 {
+        text-transform: uppercase;
+        font-family: AvenirNextCyr-Bold;
+        margin: 10px 0 0 25px;
+        @include laptop {
+            margin: 10px 0 0 15px;
+        }
+    }
+    p { 
+        margin: 20px 0 0 25px;
+        @include laptop {
+            margin: 10px 0 0 15px;
+        }
+    }
+    //Преимущества
+    &--advantages {
+        margin-top: 0;
+        .requirements__item {
+            align-items: center;
+            
+        }
+        .requirements__icon {
+            border-left: none;
+        }
+        .requirements__desc {
+            border-left: 1px solid #000;
+            height: 115px;
+            @include laptop {
+                height: 80px;
+            }
+        }
+    }
+}
+//Отзывы
+.reviews {
+    margin-top: 35px;
+    position: relative;
+    &__item {
+        background-color: #fff;
+        padding: 20px 40px;
+        box-sizing: border-box;
+        @include phones {
+            padding: 15px;
+        }
+        &.video {
+            display: flex;
+            padding: 0;
+            .reviews__info {
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 30px;
+                @include phones {
+                    margin-left: 10px;
+                }
+            }
+        }
+        p {
+            margin: 8px 0;
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &~p {
+            line-height: 1.5;
+            @include phones {
+                line-height: 1.2;
+            }
+        }
+    }
+    &__name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            padding-left: 20px;
+            border-left: 1px solid #000;
+            @include phones {
+                padding-left: 10px;
+            }
+        }
+    }
+    &__icon {
+        padding-right: 20px;
+        @include phones {
+            padding-right: 10px;
+        }
+    }
+    &__address {
+        margin: 0;
+    }
+    &__media {
+        width: 50%;
+        overflow: hidden;
+    }
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        @include phones {
+            padding: 10px;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            transition: 0.4s ease-in-out;
+            position: relative;
+            &:after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 1px;
+                background-color: #fff;
+                position: absolute;
+                transition: 0.4s ease-in-out;
+                left: 0;
+                bottom: -10px;
+            }
+            span {
+                margin-left: 12px;
+                width: 50%;
+                @include phones {
+                    margin-left: 8px;
+                }
+            }
+            img {
+                @include phones {
+                    width: 30px;
+                }
+            }
+        }
+        &:hover {
+            div {
+                transform: translateY(-20px);
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .lSSlideOuter .lSPager.lSpg {
+        margin-top: 20px !important;
+    }
+    .lSSlideOuter .lSPager.lSpg>li a {
+        width: 12px;
+        height: 12px;
+        background-color: transparent;
+        border: 1px solid #000;
+        @include laptop {
+            width: 9px;
+            height: 9px;
+        }
+    }
+    .lSSlideOuter .lSPager.lSpg>li.active a {
+        background-color: #E23626;
+        border: 1px solid #E23626;
+    }
+    .arrow-left, .arrow-right {
+        top: 40%;
+        @include laptop {
+            display: none;
+        }
+    }
+    .arrow-left {
+        left: -242px;
+        @include laptop {
+            left: -20px;
+        }
+    }
+    .arrow-right {
+        right: -242px;
+        @include laptop {
+            right: -20px;
+        }
+    }
+}
+//Контакты
+.map {
+    filter: grayscale(100%);
+}
+.contacts {
+    position: absolute;
+    top: 70px;
+    left: 242px;
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    box-sizing: border-box;
+    width: 720px;
+    @include laptop {
+        left: 100px;
+    }
+    @include tablets {
+        left: 50px;
+    }
+    @include min-tablets {
+        left: 0;
+        width: 100%;
+    }
+    @include phones {
+        padding: 20px 15px;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include phones {
+            flex-wrap: wrap;
+        }
+        .phone {
+            @include phones {
+                order: 2;
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+    }
+    &__item {
+        display: flex;
+        margin-top: 25px;
+        align-items: center;
+        @include phones {
+            margin-top: 10px;
+        }
+        &.first {
+            align-items: flex-start;
+        }
+        p {
+            margin: 0;
+        }
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__icon {
+        height: 34px;
+        border-right: 1px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 20px;
+        margin-right: 20px;
+        @include phones {
+            height: 25px;
+        }
+    }
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        div {
+            width: 48%;
+            margin-top: 10px;
+            @include phones {
+                width: 100%;
+            }
+            p {
+                &:last-child {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    .btn {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        @include phones {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            display: block;
+            margin-top: 15px;
+        }
+    }
+}
+//Футер
+.footer {
+    padding: 35px 242px;
+    background-color:rgba(229, 229, 229, 0.25);
+    display: flex;
+    flex-direction: column;
+    @include laptop {
+        padding: 35px 20px;
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include min-tablets {
+            flex-direction: column;
+        }
+    }
+    .logo {
+        flex-grow: 0;
+        img {
+            @include tablets {
+                width: 180px;
+            }
+            @include phones {
+                width: 80%;
+            }
+        }
+    }
+    nav {
+        padding-bottom: 0;
+        border-bottom: none;
+        @include phones {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        a {
+            @include tablets {
+                margin-right: 3px;
+                font-size: 11px;
+            }
+            @include phones {
+                margin-right: 0;
+                margin-top: 10px;
+            }
+        }
+    }
+    .btn {
+        @include min-tablets {
+            margin-top: 20px;
+            text-transform: none;
+        }
+    }
+    hr {
+        margin: 40px 0 20px 0;
+        color: #E23626;
+        border: 1px solid #E23626;
+        @include min-tablets {
+            margin: 20px 0 0 0;
+        }
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include phones {
+            flex-direction: column;
+        }
+    }
+}
+
+//Модальные окна
+.modal-window {
+    display: none;
+    h2 {
+        text-align: center;
+    }
+}
+//Мобильное меню
+.mobile-menu {
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    ul {
+        margin-top: 30px;
+        li {
+            margin-top: 20px;
+            @include tablets {
+                text-align: center;
+            }
+            @include phones {
+                text-align: left;
+            }
+            a {
+                text-transform: uppercase;
+            }
+        }
+    }
+    .btn {
+        display: block;
+        margin-top: 30px;
+        @include tablets {
+            width: 300px;
+            margin: 30px auto 0 auto;
+        }
+        @include phones {
+            width: 100%;
+        }
+    }
+    .address {
+        flex-direction: column;
+        margin-top: 20px;
+        a {
+            margin-left: 0;
+        }
+        &__hidden {
+            @include phones {
+                top: 55%;
+                left: 50%;
+                margin-left: -125px;
+                ul {
+                    margin-top: 10px;
+                    li {
+                        margin-top: 5px;
+                        a {
+                            text-transform: none; 
+                        }
+                    }
+                }  
+            }
+        }
+    }
+    .phone {
+        text-align: center;
+    }
+    .socials {
+        position: absolute;
+        right: 20px;
+        top: 45px;
+    }
+}
+.fancybox-slide--html .fancybox-close-small {
+    color: #fff !important;
+}
+.order-call {
+    width: 830px;
+    padding: 0;
+    @include tablets {
+        width: 80%;
+    }
+    input {
+        font-family: AvenirNextCyr;
+        border: none;
+        border-bottom: 1px solid #000;
+        padding: 8px 15px;
+        outline: none;
+    }
+    &__desc {
+        padding: 0 40px;
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include min-tablets {
+                flex-direction: column;
+            }
+            input {
+                width: 48%;
+                @include min-tablets {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .btn {
+        border: none;
+        margin: 20px auto;
+        display: block;
+        @include phones {
+            width: 100%;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    p {
+        text-align: center;
+        a {  
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__pic {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        @include phones {
+            height: 175px;
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .calculator-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .fancybox-button svg path {
+        fill: #E23626;
+    }
+}
+textarea {
+    font-family: AvenirNextCyr;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 8px 15px;
+    outline: none;
+    width: 100%;
+    resize: none;
+    height: 35px;
+    margin-top: 20px;
+}
+//Сделать расчет
+.modal-calculator {
+    width: 830px;
+    padding-bottom: 0;
+    overflow: hidden;
+    @include min-tablets {
+        padding: 20px 20px 0 20px;
+    }
+    &__pic {
+        display: flex;
+        margin-left: -44px;
+        width: 150%;
+        margin-top: 30px;
+        box-sizing: border-box;  
+    }
+    &__order {
+        padding: 30px 0;
+        position: relative;
+        display: none;
+        .order-pic {
+            position: absolute;
+            top: 0;
+            left: -45px;
+        }
+        form {
+            position: relative;
+            z-index: 10;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include phones {
+                flex-direction: column;
+            }
+        }
+        input {
+            font-family: AvenirNextCyr;
+            border: none;
+            border-bottom: 1px solid #000;
+            padding: 8px 15px;
+            outline: none;
+            width: 48%;
+            background-color: transparent;
+            @include phones {
+                width: 100%;
+                margin-top: 15px;
+            }
+        }
+        .btn {
+            border-bottom: none;
+            width: auto;
+            margin: 45px auto;
+            display: block;
+            @include phones {
+                margin: 20px auto;
+            }
+        }
+        p {     
+            position: relative;
+            z-index: 10;
+        }
+    }
+    .calculator {
+        h2 {
+            margin: 0 auto 20px 0;
+            justify-content: center;
+            &:before {
+                display: none;
+            }
+        }
+        p {
+            text-align: center;    
+            margin: 0;  
+        }
+        .fields__gen {
+            display: flex;
+            @include min-tablets {
+                flex-direction: column;
+            }
+        }
+        .fields-wrap {
+            flex-direction: column;
+            width: 50%;
+            @include min-tablets {
+                width: 100%;
+            }
+            p {
+                text-align: left;
+                margin: 0 0 5px 0;  
+            }
+        }
+        .fields-wrap__item {
+            width: 100%;
+            label {
+                width: 75%;
+                @include tablets {
+                    margin: 10px 0;
+                }
+            }
+        }
+        .results {
+            flex-direction: column;
+            p {
+                border-right: none;
+                border-bottom: 1px solid #000;
+                align-items: flex-start;
+                padding: 5px 0;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+        .order {
+            margin: 30px auto 30px auto;
+            width: 60%;
+            @include min-tablets {
+                width: 80%;
+            }
+            @include phones {
+                width: 100%;
+            }
+        }
+    }
+    .fancybox-button svg path {
+        fill: #E23626;
+    }
+}
+//Заказать авто
+.order-car {
+    width: 1200px;
+    padding: 0;
+    @media screen and (max-width: 1200px) {
+        width: 98%;
+    }
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        @include phones {
+            flex-direction: column;
+        }
+    }
+    &__left, &__right {
+        box-sizing: border-box;
+    }
+    &__left {
+        width: 60%;
+        padding: 0 0 30px 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        @include laptop {
+            width: 55%;
+        }
+        @include phones {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    &__slider {
+        width: 100%;
+        margin-top: 25px;
+        position: relative;
+        overflow: hidden;
+        ul {
+            li {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        @include phones {
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            li {
+                width: 48%;
+                margin-top: 10px;
+                display: flex;
+            }
+        }
+        .sp-buttons {
+            display: none;
+        }
+        .sp-slides, .sp-thumbnails {
+            &:hover {
+                cursor: pointer !important;
+            }
+        }
+        .arrow-left, .arrow-right {
+            width: 35px;
+            height: 35px;
+            bottom: 5%;
+            @include tablets {
+                display: none;
+            }
+        }
+    }
+    &__pic {
+        width: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    &__right {
+        padding: 30px 60px 0 30px;
+        width: 40%;
+        @include laptop {
+            padding: 30px 15px 0 30px;
+            width: 45%;
+        }
+        @media screen and (max-width: 1200px) {
+            width: 45%;
+        }
+        @include tablets {
+            padding: 20px 10px 30px 15px;
+        }
+        @include phones {
+            width: 100%;
+            padding: 0;
+        }
+        h2 {
+            text-align: left;
+            @include phones {
+                padding: 0 10px;
+            }
+        }
+    }
+    &__parameters {
+        margin-top: 50px;
+        @include min-tablets {
+            margin-top: 20px;
+        }
+        @include phones {
+            padding: 0 10px;
+        }
+        p {
+            font-weight: bold;
+            margin: 5px 0;  
+        }
+    }
+    &__desc {
+        margin-top: 20px;
+        @include phones {
+            padding: 0 10px;
+        }
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 50px;
+        @include tablets {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+        @include phones {
+            width: 100%;
+            @include phones {
+                padding: 0 10px;
+            }
+        }
+    }
+    &__price {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        width: 100%;
+        @include tablets {
+            margin-right: 0;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        #new-price {
+            font-weight: bold;
+        }
+        #old-price {
+            margin-left: 20px;
+            text-decoration: line-through;
+            @include tablets {
+                margin-left: 10px;
+            }
+        }
+    }
+    .calculator-link {
+        img {
+            width: 40px;
+        }
+    }
+    .catalog__status {
+        position: relative;
+        top: 0;
+        @include phones {
+            position: absolute;
+            bottom: 2px;
+            left: 18px;
+            top: auto;
+        }
+    }
+    .btn {
+        margin-right: 15px;
+        @include phones {
+            width: 78%;
+        }
+    }
+    .fancybox-button svg path {
+        fill: #E23626;
+    }
+    .requirements {
+        padding: 25px;
+        @include min-tablets {
+            display: none;
+        }
+        &__desc {
+            height: 90px;
+        }
+        &__icon {
+            padding-right: 10px;
+        }
+        h5 {        
+            margin-left: 10px;
+        }
+        p {    
+            margin: 0;
+            padding: 10px;
+        }
+    }  
+}
+//Оставить отзыв
+.modal-review {
+    width: 50%;
+    @include laptop {
+        width: 70%;
+    }
+    @include tablets {
+        width: 90%;
+    }
+    @include phones {
+        padding: 20px 10px;
+    }
+    div {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        @include phones {
+            flex-direction: column;
+        }
+        &:after {
+            content: "*Адрес не будет виден другим пользователям";
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 10px;
+            position: absolute;
+            bottom: -5px;
+            right: 30px;
+            @include phones {
+                right: 0;
+                left: 10px;
+            }
+        }
+        input {
+            width: 48%;
+            @include phones {
+                width: 100%;
+            }
+        }
+    }
+    input {
+        font-family: AvenirNextCyr;
+        font-size: 14px;
+        padding: 8px 15px;
+        border: none;
+        border-bottom: 1px solid #000;
+        width: 100%;
+        margin-bottom: 10px;
+        @include phones {
+            font-size: 12px;
+        }
+    }
+    textarea {
+        border: 1px solid #C4C4C4;
+        height: 196px;
+        color: #5F5F5F;
+        margin-bottom: 35px;
+        @include phones {
+            font-size: 12px;
+        }
+    }
+    .btn {
+        border-bottom: none;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    p {
+        text-align: center;
+    }
+    .fancybox-button svg path {
+        fill: #E23626;
+    }
+}
+
+//Страница "Контакты"
+.team-slider {
+    padding: 0 160px;
+    position: relative;
+    @include laptop {
+        padding: 0 20px;
+    }
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 300px;
+        background-color: #fff;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
+    ul {
+        z-index: 10;
+        position: relative;
+    }
+    .arrow-left, .arrow-right {
+        top: 50%;
+        @include phones {
+            display: none;
+        }
+    }
+    .lSSlideOuter .lSPager.lSpg {
+        margin-top: 30px !important;
+    }
+    .lSSlideOuter .lSPager.lSpg>li a {
+        border: 1px solid #000;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        &.free {
+            .team-slider__pic {
+                background: #E5E5E5;
+            }
+            h4 {
+                color: #4FBD18;
+            }
+        }
+        h4 {
+            font-size: 24px;
+            color: #000;
+            margin: 20px 0 0 0;
+        }
+        p {
+            font-size: 14px;
+            margin: 8px 0 15px 0;
+            color: #000;
+        }
+    }
+    &__pic {
+        width: 300px;
+        height: 272px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+    }
+    &__contacts {
+        display: flex;
+        align-items: center;
+        div {
+            &:first-child {
+                padding-right: 20px;
+            }
+            &:last-child {
+                display: flex;
+                flex-direction: column;
+                padding-left: 15px;
+                border-left: 1px solid #000;
+                a {
+                    font-weight: bold;
+                    &:first-child {
+                        color: #000;
+                        font-size: 14px;
+                    }
+                    &:last-child {
+                        font-size: 14px;
+                        color: #E23626;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+.cookies {
+    background: #C4C4C4;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include laptop {
+        padding: 0 20px;
+    }
+    @include min-tablets {
+        padding: 15px 20px;
+    }
+    @include phones {
+        padding: 15px 10px;
+    }
+    &__left {
+        ul {
+            display: flex;
+            align-items: center;
+            @include phones {
+                display: none;
+            }
+            li {
+                padding: 0 20px;
+                border-right: 2px solid #000;
+                &:first-child {
+                    padding-left: 0;
+                }
+                &:last-child {
+                    border-right: none;
+                    padding-right: 0;
+                }
+                a {
+                    color: #000;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .calculator-link {
+        margin: 0;
+        img {
+            animation: none;
+        }
+        @include min-tablets {
+            display: none;
+        }
+    }
+}
+.contacts {
+    &.more {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        padding: 0;
+        @include tablets {
+            flex-direction: column !important;
+        }
+        .contacts__left, .contacts__right {
+            width: 50%;
+            overflow: hidden;
+            @include tablets {
+                width: 100%;
+            }
+        }
+        .contacts__right {
+            @include tablets {
+                margin-top: 30px;
+            }
+        }
+        .phone {
+            border-left: none;
+            padding: 0;
+            text-align: left;
+            @include phones {
+                text-align: center;
+            }
+            a {
+                color: #E23626;
+            }
+            p {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        .socials {
+            margin: 40px 0 0 40px;
+        }
+        .map {
+            position: absolute;
+            right: -242px;
+            width: 67%;
+            bottom: -80px;
+            @include tablets {
+                position: relative;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+.section__top {
+    &.title {
+        padding: 80px 242px 0 242px;
+        @include laptop {
+            padding: 30px 20px;
+        }
+        @include phones {
+            padding: 30px 10px 0 10px;
+        }
+    }   
+}
+.link-back {
+    display: none;
+    @include phones {
+        display: flex;
+        align-items: center;
+        span {
+            text-transform: uppercase;
+            margin-left: 12px;
+            color: #000;
+        }
+    }
+}
